@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA494DE2245E0C8A0078E79E /* GlobalSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DE1245E0C8A0078E79E /* GlobalSingleton.swift */; };
+		DA494DE4245E0D140078E79E /* DBVCW.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DE3245E0D140078E79E /* DBVCW.swift */; };
+		DA494DE6245E0D590078E79E /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DE5245E0D590078E79E /* DocumentBrowserViewController.swift */; };
+		DA494DE8245E0D860078E79E /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DE7245E0D860078E79E /* Document.swift */; };
+		DA494DEA245E10150078E79E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DE9245E10150078E79E /* HomeView.swift */; };
+		DA494DEC245E14480078E79E /* SwiftUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DEB245E14480078E79E /* SwiftUIExtensions.swift */; };
+		DA494DEE245E1B160078E79E /* Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DED245E1B160078E79E /* Miscellaneous.swift */; };
+		DA494DF0245E26F10078E79E /* LoginAndSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DEF245E26F10078E79E /* LoginAndSignupView.swift */; };
 		DAE3E4A2245DCE1300945CF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E4A1245DCE1300945CF0 /* AppDelegate.swift */; };
 		DAE3E4A4245DCE1300945CF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E4A3245DCE1300945CF0 /* SceneDelegate.swift */; };
-		DAE3E4A6245DCE1300945CF0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E4A5245DCE1300945CF0 /* ContentView.swift */; };
+		DAE3E4A6245DCE1300945CF0 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E4A5245DCE1300945CF0 /* AppView.swift */; };
 		DAE3E4A8245DCE1600945CF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE3E4A7245DCE1600945CF0 /* Assets.xcassets */; };
 		DAE3E4AB245DCE1600945CF0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE3E4AA245DCE1600945CF0 /* Preview Assets.xcassets */; };
 		DAE3E4AE245DCE1600945CF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE3E4AC245DCE1600945CF0 /* LaunchScreen.storyboard */; };
@@ -18,6 +26,7 @@
 		DAE3E4D3245DCEDC00945CF0 /* CSV in Frameworks */ = {isa = PBXBuildFile; productRef = DAE3E4D2245DCEDC00945CF0 /* CSV */; };
 		DAE3E4D6245DCEFC00945CF0 /* PostgresClientKit in Frameworks */ = {isa = PBXBuildFile; productRef = DAE3E4D5245DCEFC00945CF0 /* PostgresClientKit */; };
 		DAE3E4D9245DCF9600945CF0 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DAE3E4D8245DCF9600945CF0 /* CryptoSwift */; };
+		DAEA2E02245DFEDD00E5CF16 /* DesignersWorkshopLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = DAEA2E01245DFEDD00E5CF16 /* DesignersWorkshopLibrary */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +47,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA494DE1245E0C8A0078E79E /* GlobalSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSingleton.swift; sourceTree = "<group>"; };
+		DA494DE3245E0D140078E79E /* DBVCW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVCW.swift; sourceTree = "<group>"; };
+		DA494DE5245E0D590078E79E /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
+		DA494DE7245E0D860078E79E /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		DA494DE9245E10150078E79E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DA494DEB245E14480078E79E /* SwiftUIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExtensions.swift; sourceTree = "<group>"; };
+		DA494DED245E1B160078E79E /* Miscellaneous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miscellaneous.swift; sourceTree = "<group>"; };
+		DA494DEF245E26F10078E79E /* LoginAndSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignupView.swift; sourceTree = "<group>"; };
 		DAE3E49E245DCE1300945CF0 /* Designers Workshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Designers Workshop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE3E4A1245DCE1300945CF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAE3E4A3245DCE1300945CF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DAE3E4A5245DCE1300945CF0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DAE3E4A5245DCE1300945CF0 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		DAE3E4A7245DCE1600945CF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAE3E4AA245DCE1600945CF0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DAE3E4AD245DCE1600945CF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +78,7 @@
 			files = (
 				DAE3E4D3245DCEDC00945CF0 /* CSV in Frameworks */,
 				DAE3E4D6245DCEFC00945CF0 /* PostgresClientKit in Frameworks */,
+				DAEA2E02245DFEDD00E5CF16 /* DesignersWorkshopLibrary in Frameworks */,
 				DAE3E4D9245DCF9600945CF0 /* CryptoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,15 +123,18 @@
 		DAE3E4A0245DCE1300945CF0 /* Designers Workshop */ = {
 			isa = PBXGroup;
 			children = (
-				DAE3E4DB245DCFEA00945CF0 /* Structs */,
 				DAE3E4DA245DCFE300945CF0 /* UI */,
 				DAE3E4A1245DCE1300945CF0 /* AppDelegate.swift */,
 				DAE3E4A3245DCE1300945CF0 /* SceneDelegate.swift */,
-				DAE3E4A5245DCE1300945CF0 /* ContentView.swift */,
+				DA494DE1245E0C8A0078E79E /* GlobalSingleton.swift */,
+				DA494DE3245E0D140078E79E /* DBVCW.swift */,
+				DA494DE5245E0D590078E79E /* DocumentBrowserViewController.swift */,
+				DA494DE7245E0D860078E79E /* Document.swift */,
 				DAE3E4A7245DCE1600945CF0 /* Assets.xcassets */,
 				DAE3E4AC245DCE1600945CF0 /* LaunchScreen.storyboard */,
 				DAE3E4AF245DCE1600945CF0 /* Info.plist */,
 				DAE3E4A9245DCE1600945CF0 /* Preview Content */,
+				DA494DED245E1B160078E79E /* Miscellaneous.swift */,
 			);
 			path = "Designers Workshop";
 			sourceTree = "<group>";
@@ -147,15 +168,12 @@
 		DAE3E4DA245DCFE300945CF0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DAE3E4A5245DCE1300945CF0 /* AppView.swift */,
+				DA494DE9245E10150078E79E /* HomeView.swift */,
+				DA494DEF245E26F10078E79E /* LoginAndSignupView.swift */,
+				DA494DEB245E14480078E79E /* SwiftUIExtensions.swift */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		DAE3E4DB245DCFEA00945CF0 /* Structs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Structs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +196,7 @@
 				DAE3E4D2245DCEDC00945CF0 /* CSV */,
 				DAE3E4D5245DCEFC00945CF0 /* PostgresClientKit */,
 				DAE3E4D8245DCF9600945CF0 /* CryptoSwift */,
+				DAEA2E01245DFEDD00E5CF16 /* DesignersWorkshopLibrary */,
 			);
 			productName = "Designers Workshop";
 			productReference = DAE3E49E245DCE1300945CF0 /* Designers Workshop.app */;
@@ -255,6 +274,7 @@
 				DAE3E4D1245DCEDC00945CF0 /* XCRemoteSwiftPackageReference "CSV.swift" */,
 				DAE3E4D4245DCEFC00945CF0 /* XCRemoteSwiftPackageReference "PostgresClientKit" */,
 				DAE3E4D7245DCF9600945CF0 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+				DAEA2E00245DFEDD00E5CF16 /* XCRemoteSwiftPackageReference "DesignersWorkshopLibrary" */,
 			);
 			productRefGroup = DAE3E49F245DCE1300945CF0 /* Products */;
 			projectDirPath = "";
@@ -299,9 +319,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA494DEC245E14480078E79E /* SwiftUIExtensions.swift in Sources */,
+				DA494DE2245E0C8A0078E79E /* GlobalSingleton.swift in Sources */,
 				DAE3E4A2245DCE1300945CF0 /* AppDelegate.swift in Sources */,
 				DAE3E4A4245DCE1300945CF0 /* SceneDelegate.swift in Sources */,
-				DAE3E4A6245DCE1300945CF0 /* ContentView.swift in Sources */,
+				DAE3E4A6245DCE1300945CF0 /* AppView.swift in Sources */,
+				DA494DE6245E0D590078E79E /* DocumentBrowserViewController.swift in Sources */,
+				DA494DEA245E10150078E79E /* HomeView.swift in Sources */,
+				DA494DE8245E0D860078E79E /* Document.swift in Sources */,
+				DA494DEE245E1B160078E79E /* Miscellaneous.swift in Sources */,
+				DA494DF0245E26F10078E79E /* LoginAndSignupView.swift in Sources */,
+				DA494DE4245E0D140078E79E /* DBVCW.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +680,14 @@
 				minimumVersion = 1.3.1;
 			};
 		};
+		DAEA2E00245DFEDD00E5CF16 /* XCRemoteSwiftPackageReference "DesignersWorkshopLibrary" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:Designers-Workshop/DesignersWorkshopLibrary.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -669,6 +705,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DAE3E4D7245DCF9600945CF0 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
 			productName = CryptoSwift;
+		};
+		DAEA2E01245DFEDD00E5CF16 /* DesignersWorkshopLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAEA2E00245DFEDD00E5CF16 /* XCRemoteSwiftPackageReference "DesignersWorkshopLibrary" */;
+			productName = DesignersWorkshopLibrary;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

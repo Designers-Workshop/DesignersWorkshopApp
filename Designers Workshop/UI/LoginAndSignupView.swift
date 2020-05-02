@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LoginAndSignupView.swift
 //  Designers Workshop
 //
 //  Created by Jeff Lebrun on 5/2/20.
@@ -8,14 +8,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LoginAndSignupView: View {
     var body: some View {
-        Text("Hello, World!")
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LoginAndSignupView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LoginAndSignupView()
     }
 }

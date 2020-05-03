@@ -12,7 +12,7 @@ import DesignersWorkshopLibrary
 
 struct HomeView: View {
 	@EnvironmentObject var gs: GlobalSingleton
-	@State private var showLoginView = false
+	@State var showLoginView = false
 	
     var body: some View {
 		ZStack {
@@ -24,7 +24,12 @@ struct HomeView: View {
 					Image("Background").resizable()
 					
 					Button(action: {
-						self.showLoginView.toggle()
+						if self.gs.user == nil {
+							self.showLoginView.toggle()
+						} else {
+							self.gs.user = nil
+						}
+						
 					}) {
 						
 						// A user is signed in...
@@ -54,7 +59,7 @@ struct HomeView: View {
 					
 				}
 			}.sheet(isPresented: $showLoginView) {
-				LoginAndSignupView().environmentObject(self.gs)
+				LoginAndSignupView(shouldDisplay: self.$showLoginView).environmentObject(self.gs)
 			}
 			
 			VStack {

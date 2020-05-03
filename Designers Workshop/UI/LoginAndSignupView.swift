@@ -11,14 +11,25 @@ import PostgresClientKit
 import DesignersWorkshopLibrary
 
 struct LoginAndSignupView: View {
+	@Binding var shouldDisplay: Bool
+	
+	@Environment(\.presentationMode) var presentationMode
+	
 	@EnvironmentObject var gs: GlobalSingleton
+	
 	@State var name = ""
 	@State var email = ""
 	@State var address = ""
 	@State var username = ""
 	@State var password = ""
+	
 	@State var progress: Float = 0.0
+	
 	@State var showSuccessView = false
+	
+	@State var message = ""
+	
+	@State var failed = false
 	
 	/// LOS - Login Or Sign Out.
 	@State var los = 0
@@ -82,13 +93,14 @@ struct LoginAndSignupView: View {
 								print("Hello, World")
 							}.round(withColor: .gray).disabled(true)
 						}
-						
 					}
 				}
 			}
-		}.actionSheet(isPresented: $showSuccessView, content: {
-			
-			ActionSheet(title: Text("Success!"), message: Text("Successfully \($los.wrappedValue == 0 ? "logged" : "signed") in"), buttons: [.default(Text("Done"))])
+		}.sheet(isPresented: $showSuccessView, content: {
+			VStack {
+				Text("\(self.failed ? "Failure" : "Success!")").bold().font(.title)
+				Text(self.message).font(.headline)
+			}
 		})
     }
 	
@@ -104,18 +116,58 @@ struct LoginAndSignupView: View {
 				progress = 1.0
 				showSuccessView = true
 				
+				message = "Successfully \($los.wrappedValue == 0 ? "logged in" : "signed up.")"
+				
+				DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+					self.showSuccessView = false
+					self.shouldDisplay = false
+				}
+			} else {
+				progress = 0.0
+				
+				message = "Invalid Credentials."
+				
+				failed = true
+				
+				showSuccessView = true
+				
+				DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+					self.showSuccessView = false
+					self.failed = false
+				}
+				
 			}
+			
 		} else {
 			let hash = Misc.main.hashPassword(username: username, password: password)
 			
 			progress = 0.3
-			
 			
 			gs.user = UDBF.main.signUp(name: name, email: email, address: address, username: username, password: hash, profilePic: UIImage(named: "generic")!.pngData()!, dateTimeCreated: Date().postgresTimestampWithTimeZone, zone: TimeZone.current.abbreviation(for: Date()) ?? "EST")
 			
 			if gs.user != nil {
 				progress = 1.0
 				showSuccessView = true
+				
+				message = "Successfully \($los.wrappedValue == 0 ? "logged in" : "signed up.")"
+				
+				DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+					self.showSuccessView = false
+					self.shouldDisplay = false
+				}
+			} else {
+				progress = 0.0
+				
+				message = "Unable to create your account."
+				
+				failed = true
+				
+				showSuccessView = true
+				
+				DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+					self.showSuccessView = false
+					self.failed = false
+				}
 				
 			}
 		}
@@ -126,8 +178,8 @@ struct LoginAndSignupView_Previews: PreviewProvider {
 	static let gs = GlobalSingleton()
     static var previews: some View {
 		Group {
-			LoginAndSignupView().environmentObject(gs).colorScheme(.light)
-			LoginAndSignupView().environmentObject(gs).colorScheme(.dark)
+			LoginAndSignupView(shouldDisplay: .constant(true)).environmentObject(gs).colorScheme(.light)
+			LoginAndSignupView(shouldDisplay: .constant(true)).environmentObject(gs).colorScheme(.dark)
 		}
     }
 }

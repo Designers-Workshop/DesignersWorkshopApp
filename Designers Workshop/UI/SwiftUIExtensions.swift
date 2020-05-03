@@ -9,8 +9,8 @@
 import Foundation
 import SwiftUI
 
-extension Button {
-	func round(by number: CGFloat = 5, withPadding padding: CGFloat = 5) -> some View {
-		self.font(.headline).padding(padding).background(Color.blue).cornerRadius(number).foregroundColor(.white)
+extension View {
+	func round(by number: CGFloat = 5, withPadding padding: CGFloat = 5, withColor color: Color = .blue, withTextColor textColor: Color = .white) -> some View {
+		self.font(.headline).padding(padding).background(color).cornerRadius(number).foregroundColor(textColor)
 	}
 }

@@ -15,6 +15,8 @@
 		DA494DEC245E14480078E79E /* SwiftUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DEB245E14480078E79E /* SwiftUIExtensions.swift */; };
 		DA494DEE245E1B160078E79E /* Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DED245E1B160078E79E /* Miscellaneous.swift */; };
 		DA494DF0245E26F10078E79E /* LoginAndSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DEF245E26F10078E79E /* LoginAndSignupView.swift */; };
+		DA494DF4245F336E0078E79E /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DF3245F336E0078E79E /* ProgressBar.swift */; };
+		DA494DF6245F389E0078E79E /* envs.json in Resources */ = {isa = PBXBuildFile; fileRef = DA494DF5245F389E0078E79E /* envs.json */; };
 		DAE3E4A2245DCE1300945CF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E4A1245DCE1300945CF0 /* AppDelegate.swift */; };
 		DAE3E4A4245DCE1300945CF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E4A3245DCE1300945CF0 /* SceneDelegate.swift */; };
 		DAE3E4A6245DCE1300945CF0 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E4A5245DCE1300945CF0 /* AppView.swift */; };
@@ -55,6 +57,8 @@
 		DA494DEB245E14480078E79E /* SwiftUIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExtensions.swift; sourceTree = "<group>"; };
 		DA494DED245E1B160078E79E /* Miscellaneous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miscellaneous.swift; sourceTree = "<group>"; };
 		DA494DEF245E26F10078E79E /* LoginAndSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignupView.swift; sourceTree = "<group>"; };
+		DA494DF3245F336E0078E79E /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		DA494DF5245F389E0078E79E /* envs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = envs.json; sourceTree = SOURCE_ROOT; };
 		DAE3E49E245DCE1300945CF0 /* Designers Workshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Designers Workshop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE3E4A1245DCE1300945CF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAE3E4A3245DCE1300945CF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +104,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA494DF1245F1AA90078E79E /* *Delegate.swift */ = {
+			isa = PBXGroup;
+			children = (
+				DAE3E4A1245DCE1300945CF0 /* AppDelegate.swift */,
+				DAE3E4A3245DCE1300945CF0 /* SceneDelegate.swift */,
+			);
+			path = "*Delegate.swift";
+			sourceTree = "<group>";
+		};
+		DA494DF2245F1AC80078E79E /* Document Browser */ = {
+			isa = PBXGroup;
+			children = (
+				DA494DE5245E0D590078E79E /* DocumentBrowserViewController.swift */,
+				DA494DE7245E0D860078E79E /* Document.swift */,
+				DA494DE3245E0D140078E79E /* DBVCW.swift */,
+			);
+			path = "Document Browser";
+			sourceTree = "<group>";
+		};
 		DAE3E495245DCE1300945CF0 = {
 			isa = PBXGroup;
 			children = (
@@ -123,18 +146,16 @@
 		DAE3E4A0245DCE1300945CF0 /* Designers Workshop */ = {
 			isa = PBXGroup;
 			children = (
+				DA494DF5245F389E0078E79E /* envs.json */,
+				DA494DF2245F1AC80078E79E /* Document Browser */,
+				DA494DF1245F1AA90078E79E /* *Delegate.swift */,
 				DAE3E4DA245DCFE300945CF0 /* UI */,
-				DAE3E4A1245DCE1300945CF0 /* AppDelegate.swift */,
-				DAE3E4A3245DCE1300945CF0 /* SceneDelegate.swift */,
 				DA494DE1245E0C8A0078E79E /* GlobalSingleton.swift */,
-				DA494DE3245E0D140078E79E /* DBVCW.swift */,
-				DA494DE5245E0D590078E79E /* DocumentBrowserViewController.swift */,
-				DA494DE7245E0D860078E79E /* Document.swift */,
+				DA494DED245E1B160078E79E /* Miscellaneous.swift */,
 				DAE3E4A7245DCE1600945CF0 /* Assets.xcassets */,
 				DAE3E4AC245DCE1600945CF0 /* LaunchScreen.storyboard */,
 				DAE3E4AF245DCE1600945CF0 /* Info.plist */,
 				DAE3E4A9245DCE1600945CF0 /* Preview Content */,
-				DA494DED245E1B160078E79E /* Miscellaneous.swift */,
 			);
 			path = "Designers Workshop";
 			sourceTree = "<group>";
@@ -172,6 +193,7 @@
 				DA494DE9245E10150078E79E /* HomeView.swift */,
 				DA494DEF245E26F10078E79E /* LoginAndSignupView.swift */,
 				DA494DEB245E14480078E79E /* SwiftUIExtensions.swift */,
+				DA494DF3245F336E0078E79E /* ProgressBar.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -293,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE3E4AE245DCE1600945CF0 /* LaunchScreen.storyboard in Resources */,
+				DA494DF6245F389E0078E79E /* envs.json in Resources */,
 				DAE3E4AB245DCE1600945CF0 /* Preview Assets.xcassets in Resources */,
 				DAE3E4A8245DCE1600945CF0 /* Assets.xcassets in Resources */,
 			);
@@ -329,6 +352,7 @@
 				DA494DE8245E0D860078E79E /* Document.swift in Sources */,
 				DA494DEE245E1B160078E79E /* Miscellaneous.swift in Sources */,
 				DA494DF0245E26F10078E79E /* LoginAndSignupView.swift in Sources */,
+				DA494DF4245F336E0078E79E /* ProgressBar.swift in Sources */,
 				DA494DE4245E0D140078E79E /* DBVCW.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +523,7 @@
 				DEVELOPMENT_TEAM = 5VZ4B379WC;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Designers Workshop/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -519,6 +544,7 @@
 				DEVELOPMENT_TEAM = 5VZ4B379WC;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Designers Workshop/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -685,7 +711,7 @@
 			repositoryURL = "git@github.com:Designers-Workshop/DesignersWorkshopLibrary.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.0.3;
+				minimumVersion = 0.0.7;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

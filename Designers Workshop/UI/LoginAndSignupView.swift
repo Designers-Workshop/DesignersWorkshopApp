@@ -135,6 +135,8 @@ struct LoginAndSignupView: View {
 			
 			gs.user = UDBF.main.logIn(username: username, password: hash)
 			
+			gs.document = nil
+			
 			if gs.user != nil {
 				progress = 1.0
 				showSuccessView = true
@@ -166,7 +168,17 @@ struct LoginAndSignupView: View {
 			
 			progress = 0.3
 			
-			gs.user = UDBF.main.signUp(name: name, email: email, address: address, username: username, password: hash, profilePic: UIImage(named: "generic")!.pngData()!, dateTimeCreated: Date().postgresTimestampWithTimeZone, zone: TimeZone.current.abbreviation(for: Date()) ?? "EST")
+			var img = Data()
+			
+			if gs.document != nil {
+				img = try! Data(contentsOf: gs.document!.fileURL)
+			} else {
+				img = UIImage(named: "generic")!.pngData()!
+			}
+			
+			gs.user = UDBF.main.signUp(name: name, email: email, address: address, username: username, password: hash, profilePic: img, dateTimeCreated: Date().postgresTimestampWithTimeZone, zone: TimeZone.current.abbreviation(for: Date()) ?? "EST")
+			
+			gs.document = nil
 			
 			if gs.user != nil {
 				progress = 1.0

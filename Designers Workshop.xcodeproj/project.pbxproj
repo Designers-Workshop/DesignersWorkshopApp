@@ -17,6 +17,7 @@
 		DA494DF0245E26F10078E79E /* LoginAndSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DEF245E26F10078E79E /* LoginAndSignupView.swift */; };
 		DA494DF4245F336E0078E79E /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DF3245F336E0078E79E /* ProgressBar.swift */; };
 		DA494DF6245F389E0078E79E /* envs.json in Resources */ = {isa = PBXBuildFile; fileRef = DA494DF5245F389E0078E79E /* envs.json */; };
+		DA53E199245F8A72001A2AC0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA53E198245F8A72001A2AC0 /* ContentView.swift */; };
 		DAE3E4A2245DCE1300945CF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E4A1245DCE1300945CF0 /* AppDelegate.swift */; };
 		DAE3E4A4245DCE1300945CF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E4A3245DCE1300945CF0 /* SceneDelegate.swift */; };
 		DAE3E4A6245DCE1300945CF0 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E4A5245DCE1300945CF0 /* AppView.swift */; };
@@ -59,6 +60,7 @@
 		DA494DEF245E26F10078E79E /* LoginAndSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignupView.swift; sourceTree = "<group>"; };
 		DA494DF3245F336E0078E79E /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		DA494DF5245F389E0078E79E /* envs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = envs.json; sourceTree = SOURCE_ROOT; };
+		DA53E198245F8A72001A2AC0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DAE3E49E245DCE1300945CF0 /* Designers Workshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Designers Workshop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE3E4A1245DCE1300945CF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAE3E4A3245DCE1300945CF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				DA494DEF245E26F10078E79E /* LoginAndSignupView.swift */,
 				DA494DEB245E14480078E79E /* SwiftUIExtensions.swift */,
 				DA494DF3245F336E0078E79E /* ProgressBar.swift */,
+				DA53E198245F8A72001A2AC0 /* ContentView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				DA494DE8245E0D860078E79E /* Document.swift in Sources */,
 				DA494DEE245E1B160078E79E /* Miscellaneous.swift in Sources */,
 				DA494DF0245E26F10078E79E /* LoginAndSignupView.swift in Sources */,
+				DA53E199245F8A72001A2AC0 /* ContentView.swift in Sources */,
 				DA494DF4245F336E0078E79E /* ProgressBar.swift in Sources */,
 				DA494DE4245E0D140078E79E /* DBVCW.swift in Sources */,
 			);
@@ -711,7 +715,7 @@
 			repositoryURL = "git@github.com:Designers-Workshop/DesignersWorkshopLibrary.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.0.7;
+				minimumVersion = 0.0.8;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

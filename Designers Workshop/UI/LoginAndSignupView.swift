@@ -13,7 +13,7 @@ import DesignersWorkshopLibrary
 struct LoginAndSignupView: View {
 	@Binding var shouldDisplay: Bool
 	
-	@Environment(\.presentationMode) var presentationMode
+	@State var showDocBrowser = false
 	
 	@EnvironmentObject var gs: GlobalSingleton
 	
@@ -23,16 +23,19 @@ struct LoginAndSignupView: View {
 	@State var username = ""
 	@State var password = ""
 	
+	/// LoginsSign up progress.
 	@State var progress: Float = 0.0
 	
 	@State var showSuccessView = false
 	
 	@State var message = ""
 	
+	/// `True`, if the login/sign up failed.
 	@State var failed = false
 	
 	/// LOS - Login Or Sign Out.
 	@State var los = 0
+	
 	static let authChoices = ["Login", "Sign Up"]
 	
 	var shouldAuthenticate: Bool {
@@ -70,11 +73,29 @@ struct LoginAndSignupView: View {
 					TextField("Username: ", text: $username)
 					SecureField("Password: ", text: $password)
 				} else {
-					TextField("Name: ", text: $name)
-					TextField("Email: ", text: $email)
-					TextField("Address: ", text: $address)
-					TextField("Username: ", text: $username)
-					SecureField("Password: ", text: $password)
+					Section(header: Text("Info")) {
+						TextField("Name: ", text: $name)
+						TextField("Email: ", text: $email)
+						TextField("Address: ", text: $address)
+						TextField("Username: ", text: $username)
+						SecureField("Password: ", text: $password)
+					}
+					
+					Section(header: Text("Profile Picture")) {
+						if gs.document != nil {
+							Image(uiImage: UIImage(data: try! Data(contentsOf: gs.document!.fileURL))!)
+								.resizable()
+								.frame(maxWidth: 100, maxHeight: 100)
+						} else {
+							Image("generic")
+								.resizable()
+								.frame(maxWidth: 100, maxHeight: 100)
+						}
+						
+						Button(action: { self.showDocBrowser.toggle() }) {
+							Text("Choose Image")
+						}.round()
+					}
 				}
 				
 				Section {
@@ -101,6 +122,8 @@ struct LoginAndSignupView: View {
 				Text("\(self.failed ? "Failure" : "Success!")").bold().font(.title)
 				Text(self.message).font(.headline)
 			}
+		}).sheet(isPresented: $showDocBrowser, content: {
+			DBVCW().environmentObject(self.gs)
 		})
     }
 	

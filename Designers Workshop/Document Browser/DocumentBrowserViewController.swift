@@ -73,6 +73,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
 			if success {
 				if let singleton = self.gs {
 					singleton.document = document
+					self.dismiss(animated: true, completion: nil)
 				}
 			} else {
 				// Make sure to handle the failed import appropriately, e.g., by presenting an error message to the user.

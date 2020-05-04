@@ -36,7 +36,7 @@ struct HomeView: View {
 						if gs.user == nil {
 							// We're either on an iPad...
 							if idiom == .pad {
-								Text("Sign Up/Login").font(.title)
+								Text("Sign Up/Login").font(.system(size: 20))
 								
 								// ...or on an iPhone.
 							} else {
@@ -47,7 +47,7 @@ struct HomeView: View {
 						} else {
 							// We're either on an iPad...
 							if idiom == .pad {
-								Text("Log Out").font(.title)
+								Text("Log Out").font(.system(size: 20))
 								
 								// ...or on an iPhone.
 							} else {
@@ -75,8 +75,6 @@ struct HomeView_Previews: PreviewProvider {
 	static let gs = GlobalSingleton()
 	
     static var previews: some View {
-		//gs.user = User(id: 27, name: "Jeff Lebrun", email: "jeff.a.lebrun@gmail.com", address: "", username: "LebJe", password: "", dateTimeCreated: Date().postgresTimestampWithTimeZone, zone: "EST", isAdmin: true, profilePic: PostgresByteA(data: Data()), forgotPasswordID: nil)
-		
 		return Group {
 			HomeView().environmentObject(gs).environment(\.colorScheme, .dark)
 			HomeView().environmentObject(gs).environment(\.colorScheme, .light)

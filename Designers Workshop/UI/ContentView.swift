@@ -22,11 +22,10 @@ struct ContentView: View {
 				}
 				
 			}
-			.navigationViewStyle(DoubleColumnNavigationViewStyle())
-			.padding()
 			.navigationBarTitle("Content")
 			.listStyle(GroupedListStyle())
 		}
+		.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

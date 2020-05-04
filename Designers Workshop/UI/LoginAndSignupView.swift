@@ -23,7 +23,7 @@ struct LoginAndSignupView: View {
 	@State var username = ""
 	@State var password = ""
 	
-	/// LoginsSign up progress.
+	/// Login/Sign up progress.
 	@State var progress: Float = 0.0
 	
 	@State var showSuccessView = false
@@ -38,6 +38,7 @@ struct LoginAndSignupView: View {
 	
 	static let authChoices = ["Login", "Sign Up"]
 	
+	/// `true` if the user can authenticate, `false` otherwise.
 	var shouldAuthenticate: Bool {
 		if $los.wrappedValue == 0 {
 			return !username.isEmpty && !password.isEmpty
@@ -123,7 +124,15 @@ struct LoginAndSignupView: View {
 				Text(self.message).font(.headline)
 			}
 		}).sheet(isPresented: $showDocBrowser, content: {
-			DBVCW().environmentObject(self.gs)
+			VStack {
+				Button(action: {
+					self.showDocBrowser = false
+				}) {
+					Text("Done")
+					}.round().padding()
+				
+				DBVCW().environmentObject(self.gs)
+			}
 		})
     }
 	

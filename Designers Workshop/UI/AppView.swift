@@ -24,7 +24,7 @@ struct AppView: View {
 			}
 			
 			// Content.
-			ContentView()
+			ContentListView()
 				.environmentObject(gs)
 				.tabItem {
 					Text("Content")
@@ -35,7 +35,7 @@ struct AppView: View {
 			HomeView()
 				.environmentObject(gs)
 				.tabItem {
-					Text("Submit Your sketch")
+					Text("Submit Your Sketch")
 					Image(systemName: "square.and.arrow.up.fill")
 			}
 			
@@ -66,7 +66,7 @@ struct AppView: View {
     }
 }
 
-fileprivate struct ContentView_Previews: PreviewProvider {
+struct AppView_Previews: PreviewProvider {
 	static let gs = GlobalSingleton()
 	
     static var previews: some View {

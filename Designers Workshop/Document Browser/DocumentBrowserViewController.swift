@@ -19,7 +19,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
 		
 		delegate = self
 		
-		allowsDocumentCreation = true
+		allowsDocumentCreation = false
 		allowsPickingMultipleItems = false
 		
 		// Update the style of the UIDocumentBrowserViewController
@@ -66,7 +66,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
 	// MARK: Document Presentation
 	
 	func presentDocument(at documentURL: URL) {
-		let document = Document(fileURL: documentURL)
+		let document = Doc(fileURL: documentURL)
 		
 		// Access the document
 		document.open(completionHandler: { success in
@@ -81,7 +81,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
 		})
 	}
 	
-	func closeDocument(_ document: Document) {
+	func closeDocument(_ document: Doc) {
 		dismiss(animated: true) {
 			document.close(completionHandler: nil)
 		}

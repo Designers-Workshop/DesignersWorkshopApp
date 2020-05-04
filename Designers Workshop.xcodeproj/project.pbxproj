@@ -10,14 +10,16 @@
 		DA494DE2245E0C8A0078E79E /* GlobalSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DE1245E0C8A0078E79E /* GlobalSingleton.swift */; };
 		DA494DE4245E0D140078E79E /* DBVCW.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DE3245E0D140078E79E /* DBVCW.swift */; };
 		DA494DE6245E0D590078E79E /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DE5245E0D590078E79E /* DocumentBrowserViewController.swift */; };
-		DA494DE8245E0D860078E79E /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DE7245E0D860078E79E /* Document.swift */; };
 		DA494DEA245E10150078E79E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DE9245E10150078E79E /* HomeView.swift */; };
 		DA494DEC245E14480078E79E /* SwiftUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DEB245E14480078E79E /* SwiftUIExtensions.swift */; };
 		DA494DEE245E1B160078E79E /* Miscellaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DED245E1B160078E79E /* Miscellaneous.swift */; };
 		DA494DF0245E26F10078E79E /* LoginAndSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DEF245E26F10078E79E /* LoginAndSignupView.swift */; };
 		DA494DF4245F336E0078E79E /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA494DF3245F336E0078E79E /* ProgressBar.swift */; };
 		DA494DF6245F389E0078E79E /* envs.json in Resources */ = {isa = PBXBuildFile; fileRef = DA494DF5245F389E0078E79E /* envs.json */; };
-		DA53E199245F8A72001A2AC0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA53E198245F8A72001A2AC0 /* ContentView.swift */; };
+		DA53E199245F8A72001A2AC0 /* ContentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA53E198245F8A72001A2AC0 /* ContentListView.swift */; };
+		DABD98862460A31C006DE02E /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD98852460A31C006DE02E /* ContentDetailView.swift */; };
+		DABD98892460B007006DE02E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = DABD98882460B007006DE02E /* SwiftSoup */; };
+		DABD988B2460B0B9006DE02E /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD988A2460B0B9006DE02E /* Document.swift */; };
 		DAE3E4A2245DCE1300945CF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E4A1245DCE1300945CF0 /* AppDelegate.swift */; };
 		DAE3E4A4245DCE1300945CF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E4A3245DCE1300945CF0 /* SceneDelegate.swift */; };
 		DAE3E4A6245DCE1300945CF0 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E4A5245DCE1300945CF0 /* AppView.swift */; };
@@ -53,14 +55,15 @@
 		DA494DE1245E0C8A0078E79E /* GlobalSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSingleton.swift; sourceTree = "<group>"; };
 		DA494DE3245E0D140078E79E /* DBVCW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVCW.swift; sourceTree = "<group>"; };
 		DA494DE5245E0D590078E79E /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
-		DA494DE7245E0D860078E79E /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		DA494DE9245E10150078E79E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DA494DEB245E14480078E79E /* SwiftUIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExtensions.swift; sourceTree = "<group>"; };
 		DA494DED245E1B160078E79E /* Miscellaneous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miscellaneous.swift; sourceTree = "<group>"; };
 		DA494DEF245E26F10078E79E /* LoginAndSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignupView.swift; sourceTree = "<group>"; };
 		DA494DF3245F336E0078E79E /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		DA494DF5245F389E0078E79E /* envs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = envs.json; sourceTree = SOURCE_ROOT; };
-		DA53E198245F8A72001A2AC0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DA53E198245F8A72001A2AC0 /* ContentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListView.swift; sourceTree = "<group>"; };
+		DABD98852460A31C006DE02E /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
+		DABD988A2460B0B9006DE02E /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		DAE3E49E245DCE1300945CF0 /* Designers Workshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Designers Workshop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE3E4A1245DCE1300945CF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAE3E4A3245DCE1300945CF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 				DAE3E4D6245DCEFC00945CF0 /* PostgresClientKit in Frameworks */,
 				DAEA2E02245DFEDD00E5CF16 /* DesignersWorkshopLibrary in Frameworks */,
 				DAE3E4D9245DCF9600945CF0 /* CryptoSwift in Frameworks */,
+				DABD98892460B007006DE02E /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,8 +122,8 @@
 		DA494DF2245F1AC80078E79E /* Document Browser */ = {
 			isa = PBXGroup;
 			children = (
+				DABD988A2460B0B9006DE02E /* Document.swift */,
 				DA494DE5245E0D590078E79E /* DocumentBrowserViewController.swift */,
-				DA494DE7245E0D860078E79E /* Document.swift */,
 				DA494DE3245E0D140078E79E /* DBVCW.swift */,
 			);
 			path = "Document Browser";
@@ -196,7 +200,8 @@
 				DA494DEF245E26F10078E79E /* LoginAndSignupView.swift */,
 				DA494DEB245E14480078E79E /* SwiftUIExtensions.swift */,
 				DA494DF3245F336E0078E79E /* ProgressBar.swift */,
-				DA53E198245F8A72001A2AC0 /* ContentView.swift */,
+				DA53E198245F8A72001A2AC0 /* ContentListView.swift */,
+				DABD98852460A31C006DE02E /* ContentDetailView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				DAE3E4D5245DCEFC00945CF0 /* PostgresClientKit */,
 				DAE3E4D8245DCF9600945CF0 /* CryptoSwift */,
 				DAEA2E01245DFEDD00E5CF16 /* DesignersWorkshopLibrary */,
+				DABD98882460B007006DE02E /* SwiftSoup */,
 			);
 			productName = "Designers Workshop";
 			productReference = DAE3E49E245DCE1300945CF0 /* Designers Workshop.app */;
@@ -300,6 +306,7 @@
 				DAE3E4D4245DCEFC00945CF0 /* XCRemoteSwiftPackageReference "PostgresClientKit" */,
 				DAE3E4D7245DCF9600945CF0 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
 				DAEA2E00245DFEDD00E5CF16 /* XCRemoteSwiftPackageReference "DesignersWorkshopLibrary" */,
+				DABD98872460B007006DE02E /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = DAE3E49F245DCE1300945CF0 /* Products */;
 			projectDirPath = "";
@@ -348,15 +355,16 @@
 				DA494DEC245E14480078E79E /* SwiftUIExtensions.swift in Sources */,
 				DA494DE2245E0C8A0078E79E /* GlobalSingleton.swift in Sources */,
 				DAE3E4A2245DCE1300945CF0 /* AppDelegate.swift in Sources */,
+				DABD98862460A31C006DE02E /* ContentDetailView.swift in Sources */,
 				DAE3E4A4245DCE1300945CF0 /* SceneDelegate.swift in Sources */,
 				DAE3E4A6245DCE1300945CF0 /* AppView.swift in Sources */,
 				DA494DE6245E0D590078E79E /* DocumentBrowserViewController.swift in Sources */,
 				DA494DEA245E10150078E79E /* HomeView.swift in Sources */,
-				DA494DE8245E0D860078E79E /* Document.swift in Sources */,
 				DA494DEE245E1B160078E79E /* Miscellaneous.swift in Sources */,
 				DA494DF0245E26F10078E79E /* LoginAndSignupView.swift in Sources */,
-				DA53E199245F8A72001A2AC0 /* ContentView.swift in Sources */,
+				DA53E199245F8A72001A2AC0 /* ContentListView.swift in Sources */,
 				DA494DF4245F336E0078E79E /* ProgressBar.swift in Sources */,
+				DABD988B2460B0B9006DE02E /* Document.swift in Sources */,
 				DA494DE4245E0D140078E79E /* DBVCW.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -686,6 +694,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DABD98872460B007006DE02E /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:scinfu/SwiftSoup.git";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 10.0.0;
+				minimumVersion = 2.3.2;
+			};
+		};
 		DAE3E4D1245DCEDC00945CF0 /* XCRemoteSwiftPackageReference "CSV.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:yaslab/CSV.swift.git";
@@ -721,6 +738,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DABD98882460B007006DE02E /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DABD98872460B007006DE02E /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
 		DAE3E4D2245DCEDC00945CF0 /* CSV */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DAE3E4D1245DCEDC00945CF0 /* XCRemoteSwiftPackageReference "CSV.swift" */;

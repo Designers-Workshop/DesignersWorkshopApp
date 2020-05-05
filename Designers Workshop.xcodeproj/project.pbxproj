@@ -20,6 +20,9 @@
 		DABD98862460A31C006DE02E /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD98852460A31C006DE02E /* ContentDetailView.swift */; };
 		DABD98892460B007006DE02E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = DABD98882460B007006DE02E /* SwiftSoup */; };
 		DABD988B2460B0B9006DE02E /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD988A2460B0B9006DE02E /* Document.swift */; };
+		DABD988D2460B8D3006DE02E /* MyAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD988C2460B8D3006DE02E /* MyAccountView.swift */; };
+		DABD988F2460B8FA006DE02E /* SubmitYourSketchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD988E2460B8FA006DE02E /* SubmitYourSketchView.swift */; };
+		DABD98922460B9E8006DE02E /* FilePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD98912460B9E8006DE02E /* FilePickerView.swift */; };
 		DAE3E4A2245DCE1300945CF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E4A1245DCE1300945CF0 /* AppDelegate.swift */; };
 		DAE3E4A4245DCE1300945CF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E4A3245DCE1300945CF0 /* SceneDelegate.swift */; };
 		DAE3E4A6245DCE1300945CF0 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E4A5245DCE1300945CF0 /* AppView.swift */; };
@@ -64,6 +67,9 @@
 		DA53E198245F8A72001A2AC0 /* ContentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListView.swift; sourceTree = "<group>"; };
 		DABD98852460A31C006DE02E /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
 		DABD988A2460B0B9006DE02E /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		DABD988C2460B8D3006DE02E /* MyAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountView.swift; sourceTree = "<group>"; };
+		DABD988E2460B8FA006DE02E /* SubmitYourSketchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitYourSketchView.swift; sourceTree = "<group>"; };
+		DABD98912460B9E8006DE02E /* FilePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePickerView.swift; sourceTree = "<group>"; };
 		DAE3E49E245DCE1300945CF0 /* Designers Workshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Designers Workshop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE3E4A1245DCE1300945CF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAE3E4A3245DCE1300945CF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +133,16 @@
 				DA494DE3245E0D140078E79E /* DBVCW.swift */,
 			);
 			path = "Document Browser";
+			sourceTree = "<group>";
+		};
+		DABD98902460B910006DE02E /* Helper Views */ = {
+			isa = PBXGroup;
+			children = (
+				DA494DEB245E14480078E79E /* SwiftUIExtensions.swift */,
+				DA494DF3245F336E0078E79E /* ProgressBar.swift */,
+				DABD98912460B9E8006DE02E /* FilePickerView.swift */,
+			);
+			path = "Helper Views";
 			sourceTree = "<group>";
 		};
 		DAE3E495245DCE1300945CF0 = {
@@ -195,13 +211,14 @@
 		DAE3E4DA245DCFE300945CF0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DABD98902460B910006DE02E /* Helper Views */,
 				DAE3E4A5245DCE1300945CF0 /* AppView.swift */,
 				DA494DE9245E10150078E79E /* HomeView.swift */,
 				DA494DEF245E26F10078E79E /* LoginAndSignupView.swift */,
-				DA494DEB245E14480078E79E /* SwiftUIExtensions.swift */,
-				DA494DF3245F336E0078E79E /* ProgressBar.swift */,
 				DA53E198245F8A72001A2AC0 /* ContentListView.swift */,
 				DABD98852460A31C006DE02E /* ContentDetailView.swift */,
+				DABD988C2460B8D3006DE02E /* MyAccountView.swift */,
+				DABD988E2460B8FA006DE02E /* SubmitYourSketchView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -352,13 +369,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DABD98922460B9E8006DE02E /* FilePickerView.swift in Sources */,
 				DA494DEC245E14480078E79E /* SwiftUIExtensions.swift in Sources */,
 				DA494DE2245E0C8A0078E79E /* GlobalSingleton.swift in Sources */,
 				DAE3E4A2245DCE1300945CF0 /* AppDelegate.swift in Sources */,
 				DABD98862460A31C006DE02E /* ContentDetailView.swift in Sources */,
 				DAE3E4A4245DCE1300945CF0 /* SceneDelegate.swift in Sources */,
+				DABD988F2460B8FA006DE02E /* SubmitYourSketchView.swift in Sources */,
 				DAE3E4A6245DCE1300945CF0 /* AppView.swift in Sources */,
 				DA494DE6245E0D590078E79E /* DocumentBrowserViewController.swift in Sources */,
+				DABD988D2460B8D3006DE02E /* MyAccountView.swift in Sources */,
 				DA494DEA245E10150078E79E /* HomeView.swift in Sources */,
 				DA494DEE245E1B160078E79E /* Miscellaneous.swift in Sources */,
 				DA494DF0245E26F10078E79E /* LoginAndSignupView.swift in Sources */,

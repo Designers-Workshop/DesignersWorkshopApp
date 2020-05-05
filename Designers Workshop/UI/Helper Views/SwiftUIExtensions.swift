@@ -14,3 +14,17 @@ extension View {
 		self.font(.headline).padding(padding).background(color).cornerRadius(number).foregroundColor(textColor)
 	}
 }
+
+extension Image {
+	init(data: Data) {
+		self.init(uiImage: UIImage(data: data)!)
+	}
+	
+	init(url: URL) {
+		self.init(data: try! Data(contentsOf: url))
+	}
+	
+	func resize(width: CGFloat = 250, height: CGFloat = 250) -> some View {
+		self.resizable().aspectRatio(contentMode: .fit).frame(maxWidth: width, maxHeight: height)
+	}
+}

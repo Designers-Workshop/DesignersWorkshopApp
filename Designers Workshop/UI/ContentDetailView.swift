@@ -38,7 +38,7 @@ struct ContentDetailView: View {
 			}
 			
 			if page.image != nil {
-				Image(uiImage: UIImage(data: page.image!)!).resizable().aspectRatio(contentMode: .fit).frame(maxWidth: 250, maxHeight: 250)
+				Image(data: page.image!).resizable().aspectRatio(contentMode: .fit).frame(maxWidth: 250, maxHeight: 250)
 			}
 		}
     }

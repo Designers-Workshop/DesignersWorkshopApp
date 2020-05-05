@@ -32,7 +32,7 @@ struct AppView: View {
 			}
 			
 			// Submit Your Sketch.
-			HomeView()
+			SubmitYourSketchView()
 				.environmentObject(gs)
 				.tabItem {
 					Text("Submit Your Sketch")
@@ -47,16 +47,8 @@ struct AppView: View {
 					Image(systemName: "cart.fill")
 			}
 			
-			// About Us.
-			HomeView()
-				.environmentObject(gs)
-				.tabItem {
-					Text("About Us")
-					Image(systemName: "info.circle.fill")
-			}
-			
 			// My Account.
-			HomeView()
+			MyAccountView()
 				.environmentObject(gs)
 				.tabItem {
 					Text("My Account")

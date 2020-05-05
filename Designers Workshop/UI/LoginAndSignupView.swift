@@ -84,7 +84,7 @@ struct LoginAndSignupView: View {
 					
 					Section(header: Text("Profile Picture")) {
 						if gs.document != nil {
-							Image(uiImage: UIImage(data: try! Data(contentsOf: gs.document!.fileURL))!)
+							Image(url: gs.document!.fileURL)
 								.resizable()
 								.frame(maxWidth: 100, maxHeight: 100)
 						} else {
@@ -118,21 +118,15 @@ struct LoginAndSignupView: View {
 					}
 				}
 			}
-		}.sheet(isPresented: $showSuccessView, content: {
+		}
+		.sheet(isPresented: $showSuccessView, content: {
 			VStack {
 				Text("\(self.failed ? "Failure" : "Success!")").bold().font(.title)
 				Text(self.message).font(.headline)
 			}
-		}).sheet(isPresented: $showDocBrowser, content: {
-			VStack {
-				Button(action: {
-					self.showDocBrowser = false
-				}) {
-					Text("Done")
-					}.round().padding()
-				
-				DBVCW().environmentObject(self.gs)
-			}
+		})
+		.sheet(isPresented: $showDocBrowser, content: {
+			FilePickerView(isShowing: self.$showDocBrowser).environmentObject(self.gs)
 		})
     }
 	
@@ -148,7 +142,7 @@ struct LoginAndSignupView: View {
 			
 			if gs.user != nil {
 				progress = 1.0
-				showSuccessView = true
+				showSuccessView.toggle()
 				
 				message = "Successfully \($los.wrappedValue == 0 ? "logged in" : "signed up.")"
 				
@@ -163,7 +157,7 @@ struct LoginAndSignupView: View {
 				
 				failed = true
 				
-				showSuccessView = true
+				showSuccessView.toggle()
 				
 				DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
 					self.showSuccessView = false
@@ -191,12 +185,12 @@ struct LoginAndSignupView: View {
 			
 			if gs.user != nil {
 				progress = 1.0
-				showSuccessView = true
+				showSuccessView.toggle()
 				
 				message = "Successfully \($los.wrappedValue == 0 ? "logged in" : "signed up.")"
 				
 				DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-					self.showSuccessView = false
+					self.showSuccessView.toggle()
 					self.shouldDisplay = false
 				}
 			} else {
@@ -206,10 +200,10 @@ struct LoginAndSignupView: View {
 				
 				failed = true
 				
-				showSuccessView = true
+				showSuccessView.toggle()
 				
 				DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-					self.showSuccessView = false
+					self.showSuccessView.toggle()
 					self.failed = false
 				}
 				

@@ -62,9 +62,6 @@ struct AppView_Previews: PreviewProvider {
 	static let gs = GlobalSingleton()
 	
     static var previews: some View {
-		Group {
-			AppView().environmentObject(gs).environment(\.colorScheme, .dark)
-			AppView().environmentObject(gs).environment(\.colorScheme, .light)
-		}
+		Text("")
     }
 }

@@ -46,12 +46,7 @@ struct ContentDetailView: View {
 
 struct ContentDetailView_Previews: PreviewProvider {
     static var previews: some View {
-		Group {
-			ContentDetailView(page: Page(id: 1, title: "Title", linkTitle: "dropdown/title", contents: "Content", image: UIImage(named: "generic")!.pngData()!, dropdown: Dropdown(id: 1, name: "dropdown"), type: "b")).environment(\.colorScheme, .dark)
-			
-			ContentDetailView(page: Page(id: 1, title: "Title", linkTitle: "dropdown/title", contents: "Content", image: UIImage(named: "generic")!.pngData()!, dropdown: Dropdown(id: 1, name: "dropdown"), type: "f")).environment(\.colorScheme, .light).previewDevice("iPhone SE (2nd generation)")
-
-		}
+		Text("")
 	}
 }
 

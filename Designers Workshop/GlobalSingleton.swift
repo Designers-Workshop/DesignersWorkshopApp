@@ -14,4 +14,5 @@ import DesignersWorkshopLibrary
 class GlobalSingleton: ObservableObject {
 	@Published var document: UIDocument? = nil
 	@Published var user: User? = nil
+	@Published var orders: [Order]? = nil
 }

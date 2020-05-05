@@ -53,8 +53,7 @@ struct ContentListView: View {
 struct ContentListView_Previews: PreviewProvider {
     static var previews: some View {
 		Group {
-			ContentListView().environment(\.colorScheme, .dark)
-			ContentListView().environment(\.colorScheme, .light)
+			Text("")
 		}
     }
 }

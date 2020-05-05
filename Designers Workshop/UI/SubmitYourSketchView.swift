@@ -40,7 +40,7 @@ struct SubmitYourSketchView: View {
 					if canUpload {
 						Button(action: { self.upload() }) {
 							Text("Upload")
-						}.round().padding()
+						}.round()
 					} else {
 						Button(action: { self.upload() }) {
 							Text("Upload")
@@ -68,9 +68,6 @@ struct SubmitYourSketchView: View {
 
 struct SubmitYourSketchView_Previews: PreviewProvider {
     static var previews: some View {
-		Group {
-			SubmitYourSketchView().environment(\.colorScheme, .dark)
-			SubmitYourSketchView().environment(\.colorScheme, .light)
-		}
+		Text("")
     }
 }

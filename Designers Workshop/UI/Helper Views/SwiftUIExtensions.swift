@@ -18,6 +18,7 @@ extension View {
 extension Image {
 	init(data: Data) {
 		self.init(uiImage: UIImage(data: data)!)
+		
 	}
 	
 	init(url: URL) {

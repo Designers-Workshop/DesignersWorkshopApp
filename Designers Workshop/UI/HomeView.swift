@@ -75,9 +75,6 @@ struct HomeView_Previews: PreviewProvider {
 	static let gs = GlobalSingleton()
 	
     static var previews: some View {
-		return Group {
-			HomeView().environmentObject(gs).environment(\.colorScheme, .dark)
-			HomeView().environmentObject(gs).environment(\.colorScheme, .light)
-		}
+		Text("")
     }
 }

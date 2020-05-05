@@ -39,7 +39,7 @@ func extractText(page: Page) -> String {
 	do {
 		let html: String = page.contents!
 		let doc: Document = try SwiftSoup.parse(html)
-		guard let t: Elements = try doc.select("p") else { return text }
+		let t: Elements = try doc.select("p")
 		
 		for c in t {
 			text += ((try? c.text()) ?? "") + "\n"

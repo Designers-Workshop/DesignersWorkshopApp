@@ -137,6 +137,7 @@ struct LoginAndSignupView: View {
 			progress = 0.3
 			
 			gs.user = UDBF.main.logIn(username: username, password: hash)
+			gs.orders = UDBF.main.getAllOrders(user: gs.user!)
 			
 			gs.document = nil
 			
@@ -180,6 +181,7 @@ struct LoginAndSignupView: View {
 			}
 			
 			gs.user = UDBF.main.signUp(name: name, email: email, address: address, username: username, password: hash, profilePic: img, dateTimeCreated: Date().postgresTimestampWithTimeZone, zone: TimeZone.current.abbreviation(for: Date()) ?? "EST")
+			gs.orders = UDBF.main.getAllOrders(user: gs.user!)
 			
 			gs.document = nil
 			
@@ -215,9 +217,6 @@ struct LoginAndSignupView: View {
 struct LoginAndSignupView_Previews: PreviewProvider {
 	static let gs = GlobalSingleton()
     static var previews: some View {
-		Group {
-			LoginAndSignupView(shouldDisplay: .constant(true)).environmentObject(gs).colorScheme(.light)
-			LoginAndSignupView(shouldDisplay: .constant(true)).environmentObject(gs).colorScheme(.dark)
-		}
+		Text("")
     }
 }

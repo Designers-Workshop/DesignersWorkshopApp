@@ -64,7 +64,7 @@ struct MyAccountView: View {
 				.navigationBarTitle("My Account")
 				.listStyle(GroupedListStyle())
 			} else {
-				Text("Please login or create an account before uploading a sketch.").font(.subheadline).bold()
+				Text("Please login or create an account before viewing your account.").font(.subheadline).bold()
 			}
 		}
 		

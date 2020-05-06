@@ -95,7 +95,11 @@ struct LoginAndSignupView: View {
 						
 						Button(action: { self.showDocBrowser.toggle() }) {
 							Text("Choose Image")
-						}.round()
+						}
+						.round()
+						.sheet(isPresented: $showDocBrowser, content: {
+							FilePickerView(isShowing: self.$showDocBrowser).environmentObject(self.gs)
+						})
 					}
 				}
 				
@@ -125,24 +129,31 @@ struct LoginAndSignupView: View {
 				Text(self.message).font(.headline)
 			}
 		})
-		.sheet(isPresented: $showDocBrowser, content: {
-			FilePickerView(isShowing: self.$showDocBrowser).environmentObject(self.gs)
-		})
     }
 	
 	func authenticate() {
 		if $los.wrappedValue == 0 {
 			let hash = Misc.main.hashPassword(username: username, password: password)
 			
-			progress = 0.3
+			DispatchQueue.main.async {
+				self.progress = 0.3
+			}
 			
 			gs.user = UDBF.main.logIn(username: username, password: hash)
-			gs.orders = UDBF.main.getAllOrders(user: gs.user!)
 			
 			gs.document = nil
 			
 			if gs.user != nil {
-				progress = 1.0
+				DispatchQueue.main.async {
+					self.progress = 0.5
+				}
+				
+				gs.orders = UDBF.main.getAllOrders(user: gs.user!)
+				
+				DispatchQueue.main.async {
+					self.progress = 1.0
+				}
+				
 				showSuccessView.toggle()
 				
 				message = "Successfully \($los.wrappedValue == 0 ? "logged in" : "signed up.")"
@@ -152,7 +163,10 @@ struct LoginAndSignupView: View {
 					self.shouldDisplay = false
 				}
 			} else {
-				progress = 0.0
+				
+				DispatchQueue.main.async {
+					self.progress = 0.0
+				}
 				
 				message = "Invalid Credentials."
 				
@@ -170,7 +184,9 @@ struct LoginAndSignupView: View {
 		} else {
 			let hash = Misc.main.hashPassword(username: username, password: password)
 			
-			progress = 0.3
+			DispatchQueue.main.async {
+				self.progress = 0.3
+			}
 			
 			var img = Data()
 			
@@ -181,12 +197,20 @@ struct LoginAndSignupView: View {
 			}
 			
 			gs.user = UDBF.main.signUp(name: name, email: email, address: address, username: username, password: hash, profilePic: img, dateTimeCreated: Date().postgresTimestampWithTimeZone, zone: TimeZone.current.abbreviation(for: Date()) ?? "EST")
-			gs.orders = UDBF.main.getAllOrders(user: gs.user!)
 			
 			gs.document = nil
 			
 			if gs.user != nil {
-				progress = 1.0
+				DispatchQueue.main.async {
+					self.progress = 0.5
+				}
+				
+				gs.orders = UDBF.main.getAllOrders(user: gs.user!)
+				
+				DispatchQueue.main.async {
+					self.progress = 1.0
+				}
+				
 				showSuccessView.toggle()
 				
 				message = "Successfully \($los.wrappedValue == 0 ? "logged in" : "signed up.")"
@@ -196,7 +220,9 @@ struct LoginAndSignupView: View {
 					self.shouldDisplay = false
 				}
 			} else {
-				progress = 0.0
+				DispatchQueue.main.async {
+					self.progress = 0.0
+				}
 				
 				message = "Unable to create your account."
 				

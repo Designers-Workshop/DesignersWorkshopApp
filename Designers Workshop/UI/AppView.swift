@@ -40,7 +40,7 @@ struct AppView: View {
 			}
 			
 			// Store.
-			HomeView()
+			StoreView()
 				.environmentObject(gs)
 				.tabItem {
 					Text("Store")

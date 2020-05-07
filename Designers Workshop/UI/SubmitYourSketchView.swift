@@ -6,6 +6,8 @@
 //  Copyright © 2020 Designers Workshop. All rights reserved.
 //
 
+// TODO: Show success view.
+
 import SwiftUI
 import DesignersWorkshopLibrary
 import PostgresClientKit
@@ -18,17 +20,26 @@ struct SubmitYourSketchView: View {
 	
 	@State var name = ""
 	
+	@State private var progress: Float = 0.0
+	
 	var canUpload: Bool { gs.document != nil }
 	
     var body: some View {
 		
 		VStack {
 			if gs.user != nil {
+				ProgressBar(value: $progress)
+					.frame(height: 5)
+					.foregroundColor(.blue)
+					.padding()
+			
 				Text("Select a sketch to upload:").padding()
 				
 				Button(action: { self.showDocBrowser.toggle() }) {
 					Text("Choose Sketch")
-					}.round().padding()
+					}
+					.round()
+					.padding()
 				
 				if gs.document != nil {
 					Image(url: gs.document!.fileURL).resize()
@@ -38,13 +49,29 @@ struct SubmitYourSketchView: View {
 					TextField("Sketch Name: ", text: $name)
 					
 					if canUpload {
-						Button(action: { self.upload() }) {
+						Button(action: {
+							
+							self.progress = 0.3
+							
+							UDBF.main.uploadFile(user: self.gs.user!, file: try! Data(contentsOf: self.gs.document!.fileURL), timestamp: Date().postgresTimestampWithTimeZone, zone: TimeZone.current.abbreviation()!, name: self.name)
+							
+							self.progress = 1.0
+							
+							self.gs.document = nil
+							self.gs.sketches = UDBF.main.getAllSketches(user: self.gs.user!)
+							self.name = ""
+							
+							self.progress = 0.0
+						}) {
 							Text("Upload")
 						}.round()
+						
 					} else {
-						Button(action: { self.upload() }) {
+						Button(action: {}) {
 							Text("Upload")
-						}.round(withColor: .gray).disabled(true).padding()
+						}
+						.round(withColor: .gray).disabled(true)
+						.padding()
 					}
 				}
 				
@@ -58,12 +85,6 @@ struct SubmitYourSketchView: View {
 		
     }
 	
-	func upload() {
-		UDBF.main.uploadFile(user: gs.user!, file: try! Data(contentsOf: gs.document!.fileURL), timestamp: Date().postgresTimestampWithTimeZone, zone: TimeZone.current.abbreviation()!, name: name)
-		
-		gs.document = nil
-		name = ""
-	}
 }
 
 struct SubmitYourSketchView_Previews: PreviewProvider {

@@ -43,7 +43,7 @@ struct HomeView: View {
 								Text("Sign Up/Login")
 							}
 							
-						// Or they are not singed in.
+						// Or they are not signed in.
 						} else {
 							// We're either on an iPad...
 							if idiom == .pad {

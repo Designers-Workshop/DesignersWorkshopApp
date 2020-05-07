@@ -13,28 +13,28 @@ import DesignersWorkshopLibrary
 struct LoginAndSignupView: View {
 	@Binding var shouldDisplay: Bool
 	
-	@State var showDocBrowser = false
+	@State private var showDocBrowser = false
+	@State private var showSuccessView = false
+	@State private var showSheet = false
 	
 	@EnvironmentObject var gs: GlobalSingleton
 	
-	@State var name = ""
-	@State var email = ""
-	@State var address = ""
-	@State var username = ""
-	@State var password = ""
+	@State private var name = ""
+	@State private var email = ""
+	@State private var address = ""
+	@State private var username = ""
+	@State private var password = ""
 	
 	/// Login/Sign up progress.
-	@State var progress: Float = 0.0
+	@State private var progress: Float = 0.0
 	
-	@State var showSuccessView = false
-	
-	@State var message = ""
+	@State private var message = ""
 	
 	/// `True`, if the login/sign up failed.
-	@State var failed = false
+	@State private var failed = false
 	
 	/// LOS - Login Or Sign Out.
-	@State var los = 0
+	@State private var los = 0
 	
 	static let authChoices = ["Login", "Sign Up"]
 	
@@ -93,50 +93,56 @@ struct LoginAndSignupView: View {
 								.frame(maxWidth: 100, maxHeight: 100)
 						}
 						
-						Button(action: { self.showDocBrowser.toggle() }) {
+						Button(action: {
+							self.showDocBrowser.toggle()
+							self.showSheet.toggle()
+						}) {
 							Text("Choose Image")
 						}
 						.round()
-						.sheet(isPresented: $showDocBrowser, content: {
-							FilePickerView(isShowing: self.$showDocBrowser).environmentObject(self.gs)
-						})
 					}
 				}
 				
 				Section {
 					if shouldAuthenticate {
 						if $los.wrappedValue == 0 {
-							Button("Login", action: authenticate).round()
+							Button("Login", action: { DispatchQueue.main.async { self.authenticate() } }).round()
 						} else {
-							Button("Sign Up", action: authenticate).round()
+							Button("Sign Up", action: { DispatchQueue.main.async { self.authenticate() } }).round()
 						}
 					} else {
 						if $los.wrappedValue == 0 {
-							Button("Login", action: authenticate)
+							Button("Login", action: {})
 								.round(withColor: .gray).disabled(true)
 						} else {
-							Button("Sign Up") {
-								print("Hello, World")
-							}.round(withColor: .gray).disabled(true)
+							Button("Sign Up", action: {}).round(withColor: .gray).disabled(true)
 						}
 					}
 				}
 			}
 		}
-		.sheet(isPresented: $showSuccessView, content: {
-			VStack {
-				Text("\(self.failed ? "Failure" : "Success!")").bold().font(.title)
-				Text(self.message).font(.headline)
+		.sheet(isPresented: $showSheet, content: {
+			if self.$showDocBrowser.wrappedValue {
+				FilePickerView(isShowing: self.$showDocBrowser).environmentObject(self.gs)
+			} else if self.$showSuccessView.wrappedValue {
+				VStack {
+					Text("\(self.failed ? "Failure" : "Success!")").bold().font(.title)
+					Text(self.message).font(.headline)
+				}
+			} else {
+				Text("")
 			}
 		})
     }
 	
 	func authenticate() {
+		gs.password = password
+		
 		if $los.wrappedValue == 0 {
 			let hash = Misc.main.hashPassword(username: username, password: password)
 			
-			DispatchQueue.main.async {
-				self.progress = 0.3
+			DispatchQueue.main.asyncAfter(deadline: .now()) {
+				self.$progress.wrappedValue = 0.3
 			}
 			
 			gs.user = UDBF.main.logIn(username: username, password: hash)
@@ -144,21 +150,23 @@ struct LoginAndSignupView: View {
 			gs.document = nil
 			
 			if gs.user != nil {
-				DispatchQueue.main.async {
-					self.progress = 0.5
+				DispatchQueue.main.asyncAfter(deadline: .now()) {
+					self.$progress.wrappedValue = 0.5
 				}
 				
 				gs.orders = UDBF.main.getAllOrders(user: gs.user!)
 				
-				DispatchQueue.main.async {
-					self.progress = 1.0
+				DispatchQueue.main.asyncAfter(deadline: .now()) {
+					self.$progress.wrappedValue = 1.0
+					self.message = "Successfully \(self.$los.wrappedValue == 0 ? "logged in" : "signed up.")"
+					
+					self.showSuccessView.toggle()
+					self.showSheet.toggle()
+					
 				}
 				
-				showSuccessView.toggle()
-				
-				message = "Successfully \($los.wrappedValue == 0 ? "logged in" : "signed up.")"
-				
 				DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+					self.showSheet.toggle()
 					self.showSuccessView = false
 					self.shouldDisplay = false
 				}
@@ -206,6 +214,7 @@ struct LoginAndSignupView: View {
 				}
 				
 				gs.orders = UDBF.main.getAllOrders(user: gs.user!)
+				gs.sketches = UDBF.main.getAllSketches(user: gs.user!)
 				
 				DispatchQueue.main.async {
 					self.progress = 1.0

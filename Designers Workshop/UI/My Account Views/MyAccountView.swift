@@ -12,14 +12,6 @@ import DesignersWorkshopLibrary
 struct MyAccountView: View {
 	@EnvironmentObject var gs: GlobalSingleton
 	
-	var sketches: [Sketch]? {
-		if gs.user != nil {
-			return UDBF.main.getAllSketches(user: gs.user!)
-		} else {
-			return nil
-		}
-	}
-	
     var body: some View {
 		
 		return NavigationView {
@@ -30,7 +22,7 @@ struct MyAccountView: View {
 					
 					// MARK: - My Info.
 					Section {
-						NavigationLink(destination: Text("Hello, World")) {
+						NavigationLink(destination: MyInfoView().environmentObject(self.gs)) {
 							Text("My Info")
 						}
 					}
@@ -57,7 +49,19 @@ struct MyAccountView: View {
 					// MARK: - My Sketches.
 					
 					Section(header: Text("My Sketches")) {
-						Text("")
+						if gs.sketches != nil {
+							ForEach(0..<gs.sketches!.count) { sketchID in
+								HStack {
+									Image(data: self.gs.sketches![sketchID].image).resizable().resize()
+									
+									Spacer()
+									
+									Text(self.gs.sketches![sketchID as Int].name)
+								}
+							}
+						} else {
+							Text("No Sketches")
+						}
 					}
 				}.id(UUID())
 				

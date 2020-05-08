@@ -25,7 +25,7 @@ struct MyInfoView: View {
 		
 		VStack {
 			if gs.user != nil {
-				Image(data: gs.user!.profilePic.data).resize(width: 300, height: 300).clipShape(Circle())
+				Image(data: gs.user!.profilePic.data).resize(width: 250, height: 250).clipShape(Circle()).cornerRadius(50)
 				
 				Form {
 					Section(header: Text("Info")) {

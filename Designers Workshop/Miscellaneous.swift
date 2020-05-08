@@ -53,3 +53,5 @@ func extractText(page: Page) -> String {
 	
 	return text
 }
+
+extension Product: Identifiable {}

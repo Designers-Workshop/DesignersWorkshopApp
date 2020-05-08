@@ -14,6 +14,10 @@ struct OrderDetailView: View {
 	@EnvironmentObject var gs: GlobalSingleton
 	var order: Order
 	
+	var addDoneButton = false
+	
+	@Binding var dismissView: Bool
+	
 	var total: Double {
 		var total = 0.0
 		
@@ -26,6 +30,11 @@ struct OrderDetailView: View {
 	
     var body: some View {
 		VStack {
+			
+			if addDoneButton {
+				Button("Done", action: { self.$dismissView.wrappedValue = false }).round().padding()
+			}
+			
 			VStack {
 				Text("Order Number: \(String(order.id))").font(.title).bold()
 				
@@ -71,6 +80,6 @@ struct OrderDetailView_Previews: PreviewProvider {
 	static let order = Order(id: 1, user: User(id: 1, name: "", email: "", address: "", username: "", password: "", dateTimeCreated: Date().postgresTimestampWithTimeZone, zone: "EST", isAdmin: true, profilePic: PostgresByteA(data: Data()), forgotPasswordID: nil), productList: [], orderDateTime: Date().postgresTimestampWithTimeZone, zone: "EST")
 	
     static var previews: some View {
-		OrderDetailView(order: order).environmentObject(gs)
+		OrderDetailView(order: order, dismissView: .constant(false)).environmentObject(gs)
     }
 }

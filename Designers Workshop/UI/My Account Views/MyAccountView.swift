@@ -34,7 +34,7 @@ struct MyAccountView: View {
 							
 							ForEach(0..<gs.orders!.count) { oID in
 								
-								NavigationLink(destination: OrderDetailView(order: self.gs.orders![oID]).environmentObject(self.gs)) {
+								NavigationLink(destination: OrderDetailView(order: self.gs.orders![oID], dismissView: .constant(false)).environmentObject(self.gs)) {
 									
 									Text("Order ID: \(self.gs.orders![oID].id) | Ordered On: \(Misc.main.fomatter(date: self.gs.orders![oID].orderDateTime.date , format: "MM/dd/yyyy, h:mm a"))")
 								}
@@ -56,11 +56,11 @@ struct MyAccountView: View {
 									
 									Spacer()
 									
-									Text(self.gs.sketches![sketchID as Int].name)
+									Text(self.gs.sketches![sketchID].name)
 								}
 							}
 						} else {
-							Text("No Sketches")
+							Text("No Sketches.")
 						}
 					}
 				}.id(UUID())

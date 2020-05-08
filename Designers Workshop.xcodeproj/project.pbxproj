@@ -19,7 +19,7 @@
 		DA53E199245F8A72001A2AC0 /* ContentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA53E198245F8A72001A2AC0 /* ContentListView.swift */; };
 		DA65D4E32461CA7500D951C7 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65D4E22461CA7500D951C7 /* OrderDetailView.swift */; };
 		DA9CFE3C2464795B00885B52 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9CFE3B2464795B00885B52 /* StoreView.swift */; };
-		DA9CFE4624647B7F00885B52 /* ASCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = DA9CFE4524647B7F00885B52 /* ASCollectionView */; };
+		DA9CFE492464CB9900885B52 /* CollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = DA9CFE482464CB9900885B52 /* CollectionView */; };
 		DAA66FE6246358BF00ED3DE1 /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA66FE5246358BF00ED3DE1 /* MyInfoView.swift */; };
 		DABD98862460A31C006DE02E /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD98852460A31C006DE02E /* ContentDetailView.swift */; };
 		DABD98892460B007006DE02E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = DABD98882460B007006DE02E /* SwiftSoup */; };
@@ -112,9 +112,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE3E4D3245DCEDC00945CF0 /* CSV in Frameworks */,
-				DA9CFE4624647B7F00885B52 /* ASCollectionView in Frameworks */,
 				DAE3E4D6245DCEFC00945CF0 /* PostgresClientKit in Frameworks */,
 				DAEA2E02245DFEDD00E5CF16 /* DesignersWorkshopLibrary in Frameworks */,
+				DA9CFE492464CB9900885B52 /* CollectionView in Frameworks */,
 				DAE3E4D9245DCF9600945CF0 /* CryptoSwift in Frameworks */,
 				DABD98892460B007006DE02E /* SwiftSoup in Frameworks */,
 			);
@@ -286,7 +286,7 @@
 				DAE3E4D8245DCF9600945CF0 /* CryptoSwift */,
 				DAEA2E01245DFEDD00E5CF16 /* DesignersWorkshopLibrary */,
 				DABD98882460B007006DE02E /* SwiftSoup */,
-				DA9CFE4524647B7F00885B52 /* ASCollectionView */,
+				DA9CFE482464CB9900885B52 /* CollectionView */,
 			);
 			productName = "Designers Workshop";
 			productReference = DAE3E49E245DCE1300945CF0 /* Designers Workshop.app */;
@@ -366,7 +366,7 @@
 				DAE3E4D7245DCF9600945CF0 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
 				DAEA2E00245DFEDD00E5CF16 /* XCRemoteSwiftPackageReference "DesignersWorkshopLibrary" */,
 				DABD98872460B007006DE02E /* XCRemoteSwiftPackageReference "SwiftSoup" */,
-				DA9CFE4424647B7F00885B52 /* XCRemoteSwiftPackageReference "ASCollectionView" */,
+				DA9CFE472464CB9900885B52 /* XCRemoteSwiftPackageReference "collectionview" */,
 			);
 			productRefGroup = DAE3E49F245DCE1300945CF0 /* Products */;
 			projectDirPath = "";
@@ -760,13 +760,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DA9CFE4424647B7F00885B52 /* XCRemoteSwiftPackageReference "ASCollectionView" */ = {
+		DA9CFE472464CB9900885B52 /* XCRemoteSwiftPackageReference "collectionview" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apptekstudios/ASCollectionView.git";
+			repositoryURL = "https://github.com/pourhadi/collectionview.git";
 			requirement = {
 				kind = versionRange;
-				maximumVersion = 2.0.0;
-				minimumVersion = 1.6.3;
+				maximumVersion = 1.0.0;
+				minimumVersion = 0.2.1;
 			};
 		};
 		DABD98872460B007006DE02E /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
@@ -814,10 +814,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DA9CFE4524647B7F00885B52 /* ASCollectionView */ = {
+		DA9CFE482464CB9900885B52 /* CollectionView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DA9CFE4424647B7F00885B52 /* XCRemoteSwiftPackageReference "ASCollectionView" */;
-			productName = ASCollectionView;
+			package = DA9CFE472464CB9900885B52 /* XCRemoteSwiftPackageReference "collectionview" */;
+			productName = CollectionView;
 		};
 		DABD98882460B007006DE02E /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -26,6 +26,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		
 		gs.user = UDBF.main.getUserByID(id: userID)
 		
+		if gs.user != nil {
+			gs.orders = UDBF.main.getAllOrders(user: gs.user!)
+			gs.sketches = UDBF.main.getAllSketches(user: gs.user!)
+		}
+		
 		let appView = AppView().environmentObject(gs)
 
 		// Use a UIHostingController as window root view controller.

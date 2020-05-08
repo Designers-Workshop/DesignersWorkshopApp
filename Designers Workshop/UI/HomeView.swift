@@ -28,6 +28,7 @@ struct HomeView: View {
 							self.showLoginView.toggle()
 						} else {
 							self.gs.user = nil
+							UserDefaults().set(0, forKey: "UserID")
 						}
 						
 					}) {

@@ -9,58 +9,44 @@
 import SwiftUI
 import PostgresClientKit
 import DesignersWorkshopLibrary
-import ASCollectionView
+import CollectionView
 
 struct StoreView: View {
 	@EnvironmentObject var gs: GlobalSingleton
 	
-	@State var selectedItems: Set<Int> = []
+	@State var selectedItems: [Product] = []
 	
-	let items = MDBF.main.getProducts()
+	@State var showReceipt = false
 	
-	var section: ASSection<Int> {
-		ASSection(id: 0,
-				  data: items,
-				  dataID: \.self,
-				  selectedItems: $selectedItems,
-				  shouldAllowSelection: { _ in return true },
-				  shouldAllowDeselection: { _ in return true }
-		) { product, state in
-			
-			if state.isSelected {
-				VStack {
-					
-					Image(data: product.image!)
-					Text("\(product.name), $\(String(format: "%.2f", product.price))")
-					Text("Selected!")
-				
-				}
-			} else {
-				VStack {
-					Image(data: product.image!).resize()
-					Text("\(product.name), $\(String(format: "%.2f", product.price))")
-				}
-			}
-		}
+	@State var order: Order? = nil
+	
+	@State var items = MDBF.main.getProducts()
+	
+	var getOrder: Order {
+		self.order ?? Order(id: 0, user: self.gs.user!, productList: [], orderDateTime: Date().postgresTimestampWithTimeZone, zone: "")
 	}
 	
     var body: some View {
 		VStack {
-			ASCollectionView(section: section).layout {
-				.grid(layoutMode: .adaptive(withMinItemSize: 100),
-					  itemSpacing: 5,
-					  lineSpacing: 5,
-					  itemSize: .absolute(300))
+			
+			CollectionView(items: $items, selectedItems: $selectedItems, selectionMode: .constant(true)) { item, _ in
+				VStack {
+					Image(data: item.image!).resize(width: 300, height: 300)
+					Text("\(item.name), $\(String(format: "%.2f", item.price))")
+				}
 			}
 			
-			Button("Order") { self.order() }.round()
+			Button("Order", action: orderProducts).round().padding()
 		}
+		.sheet(isPresented: $showReceipt, content: { OrderDetailView(order: self.getOrder, addDoneButton: true, dismissView: self.$showReceipt).environmentObject(self.gs) })
     }
 	
-	func order() {
-		for index in selectedItems {
-			print(items[index].name)
-		}
+	func orderProducts() {
+		order = UDBF.main.buyProducts(productList: selectedItems, user: gs.user!, zone: TimeZone.current.abbreviation()!)
+		
+		gs.orders = UDBF.main.getAllOrders(user: gs.user!)
+		
+		showReceipt.toggle()
 	}
 }
 

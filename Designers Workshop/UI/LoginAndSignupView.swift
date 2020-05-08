@@ -156,6 +156,10 @@ struct LoginAndSignupView: View {
 				
 				gs.orders = UDBF.main.getAllOrders(user: gs.user!)
 				
+				gs.sketches = UDBF.main.getAllSketches(user: gs.user!)
+				
+				UserDefaults().set(gs.user!.id, forKey: "UserID")
+				
 				DispatchQueue.main.asyncAfter(deadline: .now()) {
 					self.$progress.wrappedValue = 1.0
 					self.message = "Successfully \(self.$los.wrappedValue == 0 ? "logged in" : "signed up.")"
@@ -215,6 +219,7 @@ struct LoginAndSignupView: View {
 				
 				gs.orders = UDBF.main.getAllOrders(user: gs.user!)
 				gs.sketches = UDBF.main.getAllSketches(user: gs.user!)
+				UserDefaults().set(gs.user!.id, forKey: "UserID")
 				
 				DispatchQueue.main.async {
 					self.progress = 1.0

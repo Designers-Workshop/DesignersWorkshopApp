@@ -5,6 +5,7 @@
 //  Created by Jeff Lebrun on 5/6/20.
 //  Copyright © 2020 Designers Workshop. All rights reserved.
 //
+// TODO: Crop image to circle.
 
 import SwiftUI
 import DesignersWorkshopLibrary
